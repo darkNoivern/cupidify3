@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Ubuntu:wght@400;500&display=swap');
+
+.animate-lc{
+    font-size: 4rem;
+    line-height: 120%;
+    font-family: 'Rubik Moonrocks', cursive !important;
+    text-shadow: 5px 5px 3px black;
+    z-index: 20;
+    position: relative;
+    top: 0;
+}
+
+.text-lime{
+    color: lightgreen !important;
+}
+
+.lovername{
+    font-size: 2rem;
+    font-family: 'Ubuntu', sans-serif !important;
+}
+
+.lover-input{
+    max-width: 30rem;
+}
+.lcbg{
+    min-height: 85vh;
+}
+
+.sp-lc-section{
+    min-height: 35vh;
+}
+
+.game-heading{
+    font-size: 3rem;
+    line-height: 120%;
+}
+
+.dialogue-style{
+    font-size: 2rem;
+    line-height: 120%;
+}
+
+.style-quote{
+    font-size: 3rem !important;
+    
+}
