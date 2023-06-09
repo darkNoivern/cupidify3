@@ -10,7 +10,7 @@ const Games = () => {
     return (
         <>
             <div className="flexy">
-                <h1 className='text-white'>
+                <h1 className='text-white my-5'>
                     Games
                 </h1>
             </div>

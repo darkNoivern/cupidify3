@@ -6,8 +6,8 @@ import { styled } from '@mui/material/styles';
 import PauseIcon from '@mui/icons-material/Pause';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import scene from '../images/gameimage.svg'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import scene from '../images/gameimage.svg'
 
 const LoveSongs = () => {
     const [index, setIndex] = useState(0);
@@ -31,6 +31,18 @@ const LoveSongs = () => {
         }
     }, [])
 
+
+    const togglePlay = () => {
+        const audioElement = document.getElementById('audio');
+        console.log(audioElement.src);
+        if (playing) {
+            audioElement.pause();
+        } else {
+            audioElement.play();
+        }
+        setPlaying(!playing);
+    };
+
     const playSong = () => {
         console.log('hi');
         document.querySelector("audio").play();
@@ -49,11 +61,7 @@ const LoveSongs = () => {
                 </h1>
                 <div className="flexy">
                     <Tilt className="card music-player-card">
-                        <audio src={`../sounds/song` + index + `.mp3`} id="audio"></audio>
-
-                        {/* <div className="rotate-music-img">
-                            
-                        </div> */}
+                    
                         <img src={scene} className="card-img-top rotate-music-img" alt="..." />
                         <div className="card-body text-valentine d-flex justify-content-between">
 
@@ -62,20 +70,17 @@ const LoveSongs = () => {
                                 className='text-white sp-shadow'>
                                 <SkipPreviousIcon />
                             </IconButton>
-                            {playing===true ?
-                                <IconButton
-                                    onClick={() => { pauseSong() }}
-                                    className='bg-valentine text-white sp-shadow'>
+                            <IconButton
+                                onClick={() => { togglePlay(); }}
+                                className='bg-valentine text-white sp-shadow'>
+                                {playing === true ?
                                     <PauseIcon />
-                                </IconButton>
-                                :
-                                <IconButton
-                                    onClick={() => { playSong() }}
-                                    className='bg-valentine text-white sp-shadow'>
+                                    :
                                     <PlayArrowIcon />
-                                </IconButton>
+                                }
+                            </IconButton>
 
-                            }
+                            <audio id="audio" src='https://drive.google.com/file/d/1N7ETbjuPbECPebIfWSx60Kuz9KAvXQ2q/view?usp=drive_link'></audio>
                             <IconButton
                                 onClick={() => { setIndex((index + 1) % 10) }}
                                 className='text-white sp-shadow'>
